@@ -1,0 +1,32 @@
+netcdf multistorms {
+    dimensions:
+        time = 1000 ;
+
+    variables: 
+        
+        float time(time) ;
+            time:units = "seconds since 1970-01-01 0:0:0" ;   
+            time:standard_name = "time" ;
+            time:_FillValue = -999.f ;
+        // Position variables 
+        float lat(time) ; 
+            lat:units = "degrees_north" ;   
+            lat:standard_name = "latitude" ;
+            lat:_FillValue = -999.f ;
+        float lon(time) ;
+            lon:units = "degrees_east" ; 
+            lon:standard_name = "longitude" ;
+            lon:_FillValue = -999.f ;
+        // Measured variables 
+        float vort(time) ;                            
+            vort:standard_name = "atmosphere_absolute_vorticity" ;
+            vort:units = "s-1" ;
+            vort:_FillValue = -999.f ; 
+        float p(time) ;
+            p:standard_name = "air_pressure" ;
+            p:units = "Pa" ;
+            p:_FillValue = -999.f ;
+
+        // global attributes
+ 
+        : data_manager = "25806676" ;}  
